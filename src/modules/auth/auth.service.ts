@@ -30,7 +30,4 @@ export class AuthService {
     return 'handlerLogin';
   }
 
-  handlerRedirect() {
-    return 'handlerRedirect';
-  }
 }
