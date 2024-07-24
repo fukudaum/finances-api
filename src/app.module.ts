@@ -6,6 +6,7 @@ import { User } from './modules/user/user.entity';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { Family } from './modules/family/family.entity';
+import { FamilyModule } from './modules/family/family.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { Family } from './modules/family/family.entity';
     }),
     TypeOrmModule.forFeature([User, Family]),
     AuthModule,
-    UserModule
+    UserModule,
+    FamilyModule
   ],
   controllers: [AppController],
   providers: [AppService],
