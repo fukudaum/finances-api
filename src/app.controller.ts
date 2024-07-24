@@ -11,4 +11,10 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('teste')
+  @UseGuards(AuthGuard)
+  getTeste(): string {
+    return "Este é apenas um teste"
+  }
 }

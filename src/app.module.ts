@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './modules/user/user.entity';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { Family } from './modules/family/family.entity';
 
 @Module({
   imports: [
@@ -15,9 +16,10 @@ import { AuthModule } from './modules/auth/auth.module';
       username: 'postgres',
       password: 'pass',
       database: 'finances',
-      entities: [User],
+      entities: [User, Family],
       synchronize: true,
     }),
+    TypeOrmModule.forFeature([User, Family]),
     AuthModule,
     UserModule
   ],
